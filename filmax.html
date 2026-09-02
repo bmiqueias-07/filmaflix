@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color"
+          content="#050505">
+
+    <title>CineFlix</title>
+
+    <!-- CSS principal -->
+    <link rel="stylesheet"
+          href="css/style.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         TELA DE LOGIN DO USUÁRIO
+         ===================================================== -->
+
+    <div id="loginModal" class="modal show">
+
+        <div class="login-box">
+
+            <div class="login-logo">
+                CINEFLIX
+            </div>
+
+            <h2>Entrar</h2>
+
+            <p>
+                Digite a senha do seu dispositivo
+                para acessar o catálogo.
+            </p>
+
+            <input
+                type="password"
+                id="devicePassword"
+                placeholder="Senha">
+
+            <input
+                type="password"
+                id="devicePasswordConfirm"
+                placeholder="Confirmar senha">
+
+            <button
+                id="loginBtn"
+                class="btn-primary">
+                ENTRAR
+            </button>
+
+            <p
+                id="loginError"
+                class="error">
+            </p>
+
+            <div class="login-divider"></div>
+
+            <!-- Área do administrador -->
+            <a
+                href="admin.html"
+                class="admin-link">
+                🔐 Entrar como administrador
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         CABEÇALHO
+         ===================================================== -->
+
+    <header class="topbar">
+
+        <div class="logo">
+            CINEFLIX
+        </div>
+
+
+        <!-- MENU -->
+
+        <nav class="menu">
+
+            <button
+                data-view="home">
+                Início
+            </button>
+
+            <button
+                data-view="movies">
+                Filmes
+            </button>
+
+            <button
+                data-view="series">
+                Séries
+            </button>
+
+            <button
+                data-view="docs">
+                Documentários
+            </button>
+
+            <button
+                data-view="mylist">
+                ⭐ Minha lista
+            </button>
+
+        </nav>
+
+
+        <!-- BUSCA E PERFIL -->
+
+        <div class="top-actions">
+
+            <input
+                id="searchInput"
+                type="search"
+                placeholder="🔎 Buscar...">
+
+            <button
+                id="logoutBtn"
+                class="logout">
+                Sair
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         BANNER PRINCIPAL
+         ===================================================== -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <span class="hero-badge">
+                CINEFLIX
+            </span>
+
+            <h1>
+                Filmes, séries e documentários
+            </h1>
+
+            <p>
+                Assista ao seu conteúdo favorito
+                em um só lugar.
+            </p>
+
+            <button
+                class="btn-primary"
+                onclick="document.getElementById('catalogSection').scrollIntoView()">
+                ▶ VER CATÁLOGO
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CATÁLOGO
+         ===================================================== -->
+
+    <main>
+
+        <section
+            id="catalogSection"
+            class="section">
+
+            <div class="section-title">
+
+                <div>
+
+                    <h2>
+                        Catálogo
+                    </h2>
+
+                    <p>
+                        Filmes, séries e documentários
+                    </p>
+
+                </div>
+
+                <span
+                    id="accessStatus"
+                    class="status">
+                    ● Acesso autorizado
+                </span>
+
+            </div>
+
+
+            <!--
+                OS FILMES SERÃO INSERIDOS AQUI
+                PELO JAVASCRIPT/PÁINEL DO ADMINISTRADOR
+            -->
+
+            <div
+                id="catalog"
+                class="catalog-grid">
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             MINHA LISTA
+             ================================================= -->
+
+        <section class="section">
+
+            <div class="section-title">
+
+                <h2>
+                    ⭐ Minha lista
+                </h2>
+
+            </div>
+
+            <div
+                id="myList"
+                class="catalog-grid">
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         PLAYER DE VÍDEO
+         ===================================================== -->
+
+    <div
+        id="playerModal"
+        class="modal">
+
+        <div class="player-box">
+
+            <button
+                id="closePlayer"
+                class="close-player">
+                ×
+            </button>
+
+
+            <h2
+                id="playerTitle">
+            </h2>
+
+
+            <video
+                id="videoPlayer"
+                controls
+                playsinline>
+
+                Seu navegador não suporta
+                reprodução de vídeo.
+
+            </video>
+
+
+            <div class="player-info">
+
+                <p
+                    id="playerDescription">
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         RODAPÉ
+         ===================================================== -->
+
+    <footer>
+
+        <div class="footer-logo">
+            CINEFLIX
+        </div>
+
+        <p>
+            Sua plataforma de entretenimento.
+        </p>
+
+        <p class="copyright">
+            © 2026 CineFlix
+        </p>
+
+    </footer>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <!-- Configurações -->
+    <script src="js/config.js"></script>
+
+    <!-- Sistema do catálogo -->
+    <script src="js/app.js"></script>
+
+    <!-- Login -->
+    <script src="js/login.js"></script>
+
+    <!-- Player -->
+    <script src="js/player.js"></script>
+
+</body>
+
+</html>
