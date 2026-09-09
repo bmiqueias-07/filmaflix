@@ -1,0 +1,7 @@
+textfilmaflix/
+├── index.html
+├── admin.html
+├── script.js (Toda a lógica aqui)
+├── README.md
+└── css/
+    └── style.css
